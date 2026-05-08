@@ -1,15 +1,12 @@
-import { useState } from 'react';
-import './App.css';
-
-const [formData, setFormData] = useState({
-  author: '',
-  title: '',
-  body: '',
-  public: false
-})
+import PostForm from "./components/PostForm";
 
 function App() {
-  
+  return (
+    <div>
+      <h1>React Blog Post Form</h1>
+      <PostForm/>
+    </div>
+  );
 }
 
 export default App
