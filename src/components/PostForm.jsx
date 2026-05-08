@@ -24,6 +24,31 @@ function PostForm() {
             [name]: valueToUpdate,
         });
     };
+
+    const handleSubmit = (event) => {
+        event.preventDefault();
+
+        fetch(API_URL, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(formData),
+        })
+            .then((response) => response.json())
+            .then((json) => {
+                console.log("Risposta del server:", json);
+                alert("Post inviato con successo!");
+
+                // reset form
+                setFormData({
+                    author: "",
+                    title: "",
+                    body: "",
+                    public: false,
+                });
+            });
+    };
 }
 
 export default PostForm;
