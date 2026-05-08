@@ -49,6 +49,53 @@ function PostForm() {
                 });
             });
     };
+
+    return (
+        <form onSubmit={handleSubmit}>
+            <div>
+                <label>Autore</label>
+                <input
+                    type="text"
+                    name="author"
+                    value={formData.author}
+                    onChange={handleChange}
+                />
+            </div>
+
+            <div>
+                <label>Titolo</label>
+                <input
+                    type="text"
+                    name="title"
+                    value={formData.title}
+                    onChange={handleChange}
+                />
+            </div>
+
+            <div>
+                <label>Contenuto</label>
+                <textarea
+                    name="body"
+                    value={formData.body}
+                    onChange={handleChange}
+                />
+            </div>
+
+            <div>
+                <label>
+                    Pubblico
+                    <input
+                        type="checkbox"
+                        name="public"
+                        checked={formData.public}
+                        onChange={handleChange}
+                    />
+                </label>
+            </div>
+
+            <button type="submit">Invia Post</button>
+        </form>
+    );
 }
 
 export default PostForm;
